@@ -84,11 +84,19 @@ if __name__ == "__main__":
     if(opt.api_name == 'pytorch'):
         import torch
         import torchvision.models as models
+        from nasbench.get_model import get_model
         from helpers.torch_maestro_summary import summary
-
-        device = torch.device('cuda:0' if torch.cuda.is_available() else 'cpu')
-        model = getattr(models, opt.model)()
-        model = model.to(device)
+        
+        if opt.model == 'custom':
+            print(opt.custom)
+            model = get_model()
+            device = torch.device('cuda:0' if torch.cuda.is_available() else 'cpu')
+            model = model.to(device)
+        else:
+            device = torch.device('cuda:0' if torch.cuda.is_available() else 'cpu')
+            model = getattr(models, opt.model)()
+            model = model.to(device)
+            
         mae_summary = summary(model, INPUT_SIZE)
         with open("../../data/model/"+opt.outfile, "w") as fo:
             fo.write("Network {} {{\n".format(model.__module__))
@@ -109,3 +117,4 @@ if __name__ == "__main__":
             fo.write("}")
 
     print("Done converting to the Maestro DNN MODEL file")
+    

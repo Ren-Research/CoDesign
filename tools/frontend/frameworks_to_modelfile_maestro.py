@@ -90,12 +90,11 @@ if __name__ == "__main__":
         if opt.model == 'custom':
             print(opt.custom)
             model = get_model()
-            device = torch.device('cuda:0' if torch.cuda.is_available() else 'cpu')
-            model = model.to(device)
         else:
-            device = torch.device('cuda:0' if torch.cuda.is_available() else 'cpu')
             model = getattr(models, opt.model)()
-            model = model.to(device)
+            
+        device = torch.device('cuda:0' if torch.cuda.is_available() else 'cpu')
+        model = model.to(device)
             
         mae_summary = summary(model, INPUT_SIZE)
         with open("../../data/model/"+opt.outfile, "w") as fo:

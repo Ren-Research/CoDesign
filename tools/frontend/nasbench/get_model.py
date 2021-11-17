@@ -37,3 +37,6 @@ def get_model():
 	
 	#model2 = torch.load('./model/0.pt')
 	return model
+
+
+get_model()

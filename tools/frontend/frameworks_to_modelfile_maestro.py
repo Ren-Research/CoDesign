@@ -89,31 +89,56 @@ if __name__ == "__main__":
         
         if opt.model == 'custom':
             print(opt.custom)
-            model = get_model()
+            model_arr = get_model()
+            
+            for i in range(len(model_arr)):
+                model = model_arr[i]
+                device = torch.device('cuda:0' if torch.cuda.is_available() else 'cpu')
+                model = model.to(device)
+                
+                mae_summary = summary(model, INPUT_SIZE)
+                with open("../../data/model/"+str(i)+"_"+opt.outfile, "w") as fo:
+                    fo.write("Network {} {{\n".format(model.__module__))
+                    for key, val in mae_summary.items():
+                        pc = re.compile("^Conv")
+                        pl = re.compile("^Linear")
+                        match_pc = pc.match(key)
+                        match_pl = pl.match(key)
+                        if match_pc or match_pl:
+                            fo.write("Layer {} {{\n".format(key))
+                            type = val["type"]
+                            fo.write("Type: {}\n".format(type))
+                            if not match_pl:
+                                fo.write("Stride {{ X: {}, Y: {} }}\n".format(*val["stride"]))
+                            fo.write("Dimensions {{ K: {}, C: {}, R: {}, S: {}, Y: {}, X: {} }}\n".format(
+                                *val["dimension_ic"][1:]))
+                            fo.write("}\n")
+                    fo.write("}")
+            
         else:
             model = getattr(models, opt.model)()
-            
-        device = torch.device('cuda:0' if torch.cuda.is_available() else 'cpu')
-        model = model.to(device)
-            
-        mae_summary = summary(model, INPUT_SIZE)
-        with open("../../data/model/"+opt.outfile, "w") as fo:
-            fo.write("Network {} {{\n".format(model.__module__))
-            for key, val in mae_summary.items():
-                pc = re.compile("^Conv")
-                pl = re.compile("^Linear")
-                match_pc = pc.match(key)
-                match_pl = pl.match(key)
-                if match_pc or match_pl:
-                    fo.write("Layer {} {{\n".format(key))
-                    type = val["type"]
-                    fo.write("Type: {}\n".format(type))
-                    if not match_pl:
-                        fo.write("Stride {{ X: {}, Y: {} }}\n".format(*val["stride"]))
-                    fo.write("Dimensions {{ K: {}, C: {}, R: {}, S: {}, Y: {}, X: {} }}\n".format(
-                        *val["dimension_ic"][1:]))
-                    fo.write("}\n")
-            fo.write("}")
+        
+            device = torch.device('cuda:0' if torch.cuda.is_available() else 'cpu')
+            model = model.to(device)
+                
+            mae_summary = summary(model, INPUT_SIZE)
+            with open("../../data/model/"+opt.outfile, "w") as fo:
+                fo.write("Network {} {{\n".format(model.__module__))
+                for key, val in mae_summary.items():
+                    pc = re.compile("^Conv")
+                    pl = re.compile("^Linear")
+                    match_pc = pc.match(key)
+                    match_pl = pl.match(key)
+                    if match_pc or match_pl:
+                        fo.write("Layer {} {{\n".format(key))
+                        type = val["type"]
+                        fo.write("Type: {}\n".format(type))
+                        if not match_pl:
+                            fo.write("Stride {{ X: {}, Y: {} }}\n".format(*val["stride"]))
+                        fo.write("Dimensions {{ K: {}, C: {}, R: {}, S: {}, Y: {}, X: {} }}\n".format(
+                            *val["dimension_ic"][1:]))
+                        fo.write("}\n")
+                fo.write("}")
 
     print("Done converting to the Maestro DNN MODEL file")
     

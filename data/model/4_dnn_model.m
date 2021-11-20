@@ -511,205 +511,191 @@ Dimensions { K: 144, C: 144, R: 1, S: 1, Y: 4, X: 4 }
 }
 Layer Conv2d-103 {
 Type: CONV
-Stride { X: 1, Y: 1 }
-Dimensions { K: 128, C: 576, R: 1, S: 1, Y: 2, X: 2 }
-}
-Layer Conv2d-104 {
-Type: CONV
-Stride { X: 1, Y: 1 }
-Dimensions { K: 768, C: 128, R: 2, S: 2, Y: 2, X: 2 }
-}
-Layer Linear-105 {
-Type: CONV
-Dimensions { K: 100, C: 768, R: 1, S: 1, Y: 1, X: 1 }
-}
-Layer Conv2d-106 {
-Type: CONV
 Stride { X: 2, Y: 2 }
 Dimensions { K: 72, C: 288, R: 1, S: 1, Y: 8, X: 8 }
 }
-Layer Conv2d-107 {
+Layer Conv2d-104 {
 Type: CONV
 Stride { X: 2, Y: 2 }
 Dimensions { K: 72, C: 288, R: 1, S: 1, Y: 7, X: 7 }
 }
-Layer Conv2d-108 {
+Layer Conv2d-105 {
 Type: CONV
 Stride { X: 1, Y: 1 }
 Dimensions { K: 144, C: 576, R: 1, S: 1, Y: 4, X: 4 }
 }
-Layer Conv2d-109 {
+Layer Conv2d-106 {
 Type: DSCONV
 Stride { X: 1, Y: 1 }
 Dimensions { K: 1, C: 144, R: 5, S: 5, Y: 4, X: 4 }
+}
+Layer Conv2d-107 {
+Type: CONV
+Stride { X: 1, Y: 1 }
+Dimensions { K: 144, C: 144, R: 1, S: 1, Y: 4, X: 4 }
+}
+Layer Conv2d-108 {
+Type: DSCONV
+Stride { X: 1, Y: 1 }
+Dimensions { K: 1, C: 144, R: 3, S: 3, Y: 4, X: 4 }
+}
+Layer Conv2d-109 {
+Type: CONV
+Stride { X: 1, Y: 1 }
+Dimensions { K: 144, C: 144, R: 1, S: 1, Y: 4, X: 4 }
 }
 Layer Conv2d-110 {
 Type: CONV
 Stride { X: 1, Y: 1 }
-Dimensions { K: 144, C: 144, R: 1, S: 1, Y: 4, X: 4 }
+Dimensions { K: 144, C: 576, R: 1, S: 1, Y: 4, X: 4 }
 }
 Layer Conv2d-111 {
-Type: DSCONV
-Stride { X: 1, Y: 1 }
-Dimensions { K: 1, C: 144, R: 3, S: 3, Y: 4, X: 4 }
-}
-Layer Conv2d-112 {
 Type: CONV
 Stride { X: 1, Y: 1 }
-Dimensions { K: 144, C: 144, R: 1, S: 1, Y: 4, X: 4 }
+Dimensions { K: 144, C: 576, R: 1, S: 1, Y: 4, X: 4 }
+}
+Layer Conv2d-112 {
+Type: DSCONV
+Stride { X: 1, Y: 1 }
+Dimensions { K: 1, C: 144, R: 5, S: 5, Y: 4, X: 4 }
 }
 Layer Conv2d-113 {
 Type: CONV
 Stride { X: 1, Y: 1 }
-Dimensions { K: 144, C: 576, R: 1, S: 1, Y: 4, X: 4 }
+Dimensions { K: 144, C: 144, R: 1, S: 1, Y: 4, X: 4 }
 }
 Layer Conv2d-114 {
-Type: CONV
-Stride { X: 1, Y: 1 }
-Dimensions { K: 144, C: 576, R: 1, S: 1, Y: 4, X: 4 }
-}
-Layer Conv2d-115 {
 Type: DSCONV
 Stride { X: 1, Y: 1 }
-Dimensions { K: 1, C: 144, R: 5, S: 5, Y: 4, X: 4 }
+Dimensions { K: 1, C: 144, R: 3, S: 3, Y: 4, X: 4 }
+}
+Layer Conv2d-115 {
+Type: CONV
+Stride { X: 1, Y: 1 }
+Dimensions { K: 144, C: 144, R: 1, S: 1, Y: 4, X: 4 }
 }
 Layer Conv2d-116 {
 Type: CONV
 Stride { X: 1, Y: 1 }
-Dimensions { K: 144, C: 144, R: 1, S: 1, Y: 4, X: 4 }
+Dimensions { K: 144, C: 576, R: 1, S: 1, Y: 4, X: 4 }
 }
 Layer Conv2d-117 {
-Type: DSCONV
-Stride { X: 1, Y: 1 }
-Dimensions { K: 1, C: 144, R: 3, S: 3, Y: 4, X: 4 }
-}
-Layer Conv2d-118 {
 Type: CONV
 Stride { X: 1, Y: 1 }
-Dimensions { K: 144, C: 144, R: 1, S: 1, Y: 4, X: 4 }
+Dimensions { K: 144, C: 576, R: 1, S: 1, Y: 4, X: 4 }
+}
+Layer Conv2d-118 {
+Type: DSCONV
+Stride { X: 1, Y: 1 }
+Dimensions { K: 1, C: 144, R: 5, S: 5, Y: 4, X: 4 }
 }
 Layer Conv2d-119 {
 Type: CONV
 Stride { X: 1, Y: 1 }
-Dimensions { K: 144, C: 576, R: 1, S: 1, Y: 4, X: 4 }
+Dimensions { K: 144, C: 144, R: 1, S: 1, Y: 4, X: 4 }
 }
 Layer Conv2d-120 {
-Type: CONV
-Stride { X: 1, Y: 1 }
-Dimensions { K: 144, C: 576, R: 1, S: 1, Y: 4, X: 4 }
-}
-Layer Conv2d-121 {
 Type: DSCONV
 Stride { X: 1, Y: 1 }
-Dimensions { K: 1, C: 144, R: 5, S: 5, Y: 4, X: 4 }
+Dimensions { K: 1, C: 144, R: 3, S: 3, Y: 4, X: 4 }
+}
+Layer Conv2d-121 {
+Type: CONV
+Stride { X: 1, Y: 1 }
+Dimensions { K: 144, C: 144, R: 1, S: 1, Y: 4, X: 4 }
 }
 Layer Conv2d-122 {
 Type: CONV
 Stride { X: 1, Y: 1 }
-Dimensions { K: 144, C: 144, R: 1, S: 1, Y: 4, X: 4 }
+Dimensions { K: 144, C: 576, R: 1, S: 1, Y: 4, X: 4 }
 }
 Layer Conv2d-123 {
-Type: DSCONV
-Stride { X: 1, Y: 1 }
-Dimensions { K: 1, C: 144, R: 3, S: 3, Y: 4, X: 4 }
-}
-Layer Conv2d-124 {
 Type: CONV
 Stride { X: 1, Y: 1 }
-Dimensions { K: 144, C: 144, R: 1, S: 1, Y: 4, X: 4 }
+Dimensions { K: 144, C: 576, R: 1, S: 1, Y: 4, X: 4 }
+}
+Layer Conv2d-124 {
+Type: DSCONV
+Stride { X: 1, Y: 1 }
+Dimensions { K: 1, C: 144, R: 5, S: 5, Y: 4, X: 4 }
 }
 Layer Conv2d-125 {
 Type: CONV
 Stride { X: 1, Y: 1 }
-Dimensions { K: 144, C: 576, R: 1, S: 1, Y: 4, X: 4 }
+Dimensions { K: 144, C: 144, R: 1, S: 1, Y: 4, X: 4 }
 }
 Layer Conv2d-126 {
-Type: CONV
-Stride { X: 1, Y: 1 }
-Dimensions { K: 144, C: 576, R: 1, S: 1, Y: 4, X: 4 }
-}
-Layer Conv2d-127 {
 Type: DSCONV
 Stride { X: 1, Y: 1 }
-Dimensions { K: 1, C: 144, R: 5, S: 5, Y: 4, X: 4 }
+Dimensions { K: 1, C: 144, R: 3, S: 3, Y: 4, X: 4 }
+}
+Layer Conv2d-127 {
+Type: CONV
+Stride { X: 1, Y: 1 }
+Dimensions { K: 144, C: 144, R: 1, S: 1, Y: 4, X: 4 }
 }
 Layer Conv2d-128 {
 Type: CONV
 Stride { X: 1, Y: 1 }
-Dimensions { K: 144, C: 144, R: 1, S: 1, Y: 4, X: 4 }
+Dimensions { K: 144, C: 576, R: 1, S: 1, Y: 4, X: 4 }
 }
 Layer Conv2d-129 {
-Type: DSCONV
-Stride { X: 1, Y: 1 }
-Dimensions { K: 1, C: 144, R: 3, S: 3, Y: 4, X: 4 }
-}
-Layer Conv2d-130 {
 Type: CONV
 Stride { X: 1, Y: 1 }
-Dimensions { K: 144, C: 144, R: 1, S: 1, Y: 4, X: 4 }
+Dimensions { K: 144, C: 576, R: 1, S: 1, Y: 4, X: 4 }
+}
+Layer Conv2d-130 {
+Type: DSCONV
+Stride { X: 1, Y: 1 }
+Dimensions { K: 1, C: 144, R: 5, S: 5, Y: 4, X: 4 }
 }
 Layer Conv2d-131 {
 Type: CONV
 Stride { X: 1, Y: 1 }
-Dimensions { K: 144, C: 576, R: 1, S: 1, Y: 4, X: 4 }
+Dimensions { K: 144, C: 144, R: 1, S: 1, Y: 4, X: 4 }
 }
 Layer Conv2d-132 {
-Type: CONV
-Stride { X: 1, Y: 1 }
-Dimensions { K: 144, C: 576, R: 1, S: 1, Y: 4, X: 4 }
-}
-Layer Conv2d-133 {
 Type: DSCONV
 Stride { X: 1, Y: 1 }
-Dimensions { K: 1, C: 144, R: 5, S: 5, Y: 4, X: 4 }
+Dimensions { K: 1, C: 144, R: 3, S: 3, Y: 4, X: 4 }
+}
+Layer Conv2d-133 {
+Type: CONV
+Stride { X: 1, Y: 1 }
+Dimensions { K: 144, C: 144, R: 1, S: 1, Y: 4, X: 4 }
 }
 Layer Conv2d-134 {
 Type: CONV
 Stride { X: 1, Y: 1 }
-Dimensions { K: 144, C: 144, R: 1, S: 1, Y: 4, X: 4 }
+Dimensions { K: 144, C: 576, R: 1, S: 1, Y: 4, X: 4 }
 }
 Layer Conv2d-135 {
-Type: DSCONV
+Type: CONV
 Stride { X: 1, Y: 1 }
-Dimensions { K: 1, C: 144, R: 3, S: 3, Y: 4, X: 4 }
+Dimensions { K: 144, C: 576, R: 1, S: 1, Y: 4, X: 4 }
 }
 Layer Conv2d-136 {
-Type: CONV
-Stride { X: 1, Y: 1 }
-Dimensions { K: 144, C: 144, R: 1, S: 1, Y: 4, X: 4 }
-}
-Layer Conv2d-137 {
-Type: CONV
-Stride { X: 1, Y: 1 }
-Dimensions { K: 144, C: 576, R: 1, S: 1, Y: 4, X: 4 }
-}
-Layer Conv2d-138 {
-Type: CONV
-Stride { X: 1, Y: 1 }
-Dimensions { K: 144, C: 576, R: 1, S: 1, Y: 4, X: 4 }
-}
-Layer Conv2d-139 {
 Type: DSCONV
 Stride { X: 1, Y: 1 }
 Dimensions { K: 1, C: 144, R: 5, S: 5, Y: 4, X: 4 }
 }
-Layer Conv2d-140 {
+Layer Conv2d-137 {
 Type: CONV
 Stride { X: 1, Y: 1 }
 Dimensions { K: 144, C: 144, R: 1, S: 1, Y: 4, X: 4 }
 }
-Layer Conv2d-141 {
+Layer Conv2d-138 {
 Type: DSCONV
 Stride { X: 1, Y: 1 }
 Dimensions { K: 1, C: 144, R: 3, S: 3, Y: 4, X: 4 }
 }
-Layer Conv2d-142 {
+Layer Conv2d-139 {
 Type: CONV
 Stride { X: 1, Y: 1 }
 Dimensions { K: 144, C: 144, R: 1, S: 1, Y: 4, X: 4 }
 }
-Layer Linear-143 {
+Layer Linear-140 {
 Type: CONV
-Dimensions { K: 100, C: 576, R: 1, S: 1, Y: 1, X: 1 }
+Dimensions { K: 10, C: 576, R: 1, S: 1, Y: 1, X: 1 }
 }
 }

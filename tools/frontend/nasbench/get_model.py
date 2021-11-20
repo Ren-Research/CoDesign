@@ -27,17 +27,18 @@ def get_model():
 	logging.basicConfig(stream=sys.stdout, level=logging.INFO,
 			format=log_format, datefmt='%m/%d %I:%M:%S %p')
 	
-	CIFAR_CLASSES = 100
+	CIFAR_CLASSES = 10
 	
 	model_arch = pickle.load(open("./nasbench/model_arch.pickle", "rb"))
 	all_model = []
 	
 	index = 0
 	for arch in model_arch:
-		if index < 10:
+		if index < 10000:
 			genotype = get_genotype_from_arch(arch)
 			#genotype = eval("genotypes.%s" % 'DARTS')
-			print(genotype)
+			#print(genotype)
+			print(index)
 		#	for geno in model_genotype:
 		#		genotype = eval("genotypes.%s" % 'DARTS')
 			model = Network(36, CIFAR_CLASSES, 20, True, genotype)

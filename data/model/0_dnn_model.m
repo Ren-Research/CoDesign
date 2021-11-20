@@ -1261,7 +1261,7 @@ Dimensions { K: 768, C: 128, R: 2, S: 2, Y: 2, X: 2 }
 }
 Layer Linear-253 {
 Type: CONV
-Dimensions { K: 100, C: 768, R: 1, S: 1, Y: 1, X: 1 }
+Dimensions { K: 10, C: 768, R: 1, S: 1, Y: 1, X: 1 }
 }
 Layer Conv2d-254 {
 Type: CONV
@@ -1810,6 +1810,6 @@ Dimensions { K: 144, C: 144, R: 1, S: 1, Y: 4, X: 4 }
 }
 Layer Linear-363 {
 Type: CONV
-Dimensions { K: 100, C: 576, R: 1, S: 1, Y: 1, X: 1 }
+Dimensions { K: 10, C: 576, R: 1, S: 1, Y: 1, X: 1 }
 }
 }

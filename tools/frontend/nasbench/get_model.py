@@ -83,8 +83,9 @@ def get_model():
 	print(len(select_index))
 	all_model = []
 	
-	for i in range(len(select_index)):
-		arch = model_arch[i]
+	for i in range(100):
+		index = select_index[i]
+		arch = model_arch[index]
 		genotype = get_genotype_from_arch(arch)
 		print(i)
 		model = Network(36, CIFAR_CLASSES, 20, True, genotype)

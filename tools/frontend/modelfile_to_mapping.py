@@ -14,14 +14,14 @@ if __name__ == "__main__":
     dsconv = 0
     base_path = '../../data/'
     
-    select_index = pickle.load(open("./nasbench/model_index.pickle", "rb"))
+    select_index = pickle.load(open("./nasbench/model_index_depth.pickle", "rb"))
     for i in range(len(select_index)):
         print(base_path + 'model/' + str(i) + "_" + opt.model_file)
         if os.path.exists(base_path + 'model/' + str(i) + "_" + opt.model_file):
             with open('./dataflow/' + opt.dataflow + ".m" ,"r") as fd:
                 with open('./dataflow/'+ 'dpt.m' , "r") as fdpt:
                     with open(base_path + 'mapping/' + str(i) + '_' + opt.outfile, "w") as fo:
-                        with open(base_path + 'model/' + opt.model_file, "r") as fm:
+                        with open(base_path + 'model/' + str(i) + "_" + opt.model_file, "r") as fm:
                             for line in fm:
                                 if(re.search("DSCONV",line)):
                                     dsconv = 1

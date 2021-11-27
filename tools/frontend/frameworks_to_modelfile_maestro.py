@@ -93,6 +93,7 @@ if __name__ == "__main__":
             
             for i in range(len(model_arr)):
                 model = model_arr[i]
+                print(mode)
                 device = torch.device('cuda:0' if torch.cuda.is_available() else 'cpu')
                 model = model.to(device)
                 

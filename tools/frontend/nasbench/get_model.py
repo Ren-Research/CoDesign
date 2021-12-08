@@ -100,7 +100,7 @@ def get_model():
 #		genotype = DARTS_V2
 		print(i)
 		#print(arch, genotype)
-		model = Network(36, CIFAR_CLASSES, 20, True, genotype)
+		model = Network(36, CIFAR_CLASSES, 20, False, genotype)
 #		print(model)
 #		print(h)
 		all_model.append(model)

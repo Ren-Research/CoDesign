@@ -176,52 +176,52 @@ class Arch:
 				# by comparing their path encodings
 				return np.sum(np.array(self.encode_paths() != np.array(other.encode_paths())))
 	
-np.random.seed(0)	
-arch = Arch().random_arch()
-print(arch)
-# ([(1, 3), (0, 4), (2, 4), (1, 3), (3, 0), (1, 5), (2, 4), (4, 3)], [(0, 2), (1, 0), (0, 3), (2, 0), (2, 1), (0, 5), (3, 0), (4, 4)])
-
-
-from collections import namedtuple
-import pickle
-
-Genotype = namedtuple('Genotype', 'normal normal_concat reduce reduce_concat')
-DARTS_V1 = Genotype(normal=[('sep_conv_3x3', 1), ('sep_conv_3x3', 0), ('skip_connect', 0), ('sep_conv_3x3', 1), ('skip_connect', 0), ('sep_conv_3x3', 1), ('sep_conv_3x3', 0), ('skip_connect', 2)], normal_concat=[2, 3, 4, 5], reduce=[('max_pool_3x3', 0), ('max_pool_3x3', 1), ('skip_connect', 2), ('max_pool_3x3', 0), ('max_pool_3x3', 0), ('skip_connect', 2), ('skip_connect', 2), ('avg_pool_3x3', 0)], reduce_concat=[2, 3, 4, 5])
-
-n_model = 10000
-model_genotype = []
-model_arch = []
-
-for i in range(n_model):
-	np.random.seed(i)	
-	#NUM_VERTICES = np.random.randint(4, 10)
-	#print(NUM_VERTICES)
-	arch = Arch().random_arch()
-	normal = []
-	reduce = []
-	sample_normal = arch[0]
-	for nodes, op in sample_normal:
-		op_name = OPS[op]
-		normal.append((op_name, nodes))
-	
-	sample_reduce = arch[1]
-	for nodes, op in sample_reduce:
-		op_name = OPS[op]
-		reduce.append((op_name, nodes))
-		
-	sample_darts = Genotype(normal=normal, normal_concat=[2, 3, 4, 5], reduce=reduce, reduce_concat=[2, 3, 4, 5])
-	print(arch)
-	print(sample_darts)
-	model_arch.append(arch)
-	
-	model_genotype.append(sample_darts)
-
-pickle.dump(model_genotype, open("new/model_genotype_depth.pickle", "wb"))
-pickle.dump(model_arch, open("new/model_arch_depth.pickle", "wb"))
-
-depth = []
-for i in range(n_model):
-	np.random.seed(i)	
-	depth.append(np.random.randint(8, 21))
-print(depth)
-pickle.dump(model_arch, open("new/depth.pickle", "wb"))
+#np.random.seed(0)	
+#arch = Arch().random_arch()
+#print(arch)
+## ([(1, 3), (0, 4), (2, 4), (1, 3), (3, 0), (1, 5), (2, 4), (4, 3)], [(0, 2), (1, 0), (0, 3), (2, 0), (2, 1), (0, 5), (3, 0), (4, 4)])
+#
+#
+#from collections import namedtuple
+#import pickle
+#
+#Genotype = namedtuple('Genotype', 'normal normal_concat reduce reduce_concat')
+#DARTS_V1 = Genotype(normal=[('sep_conv_3x3', 1), ('sep_conv_3x3', 0), ('skip_connect', 0), ('sep_conv_3x3', 1), ('skip_connect', 0), ('sep_conv_3x3', 1), ('sep_conv_3x3', 0), ('skip_connect', 2)], normal_concat=[2, 3, 4, 5], reduce=[('max_pool_3x3', 0), ('max_pool_3x3', 1), ('skip_connect', 2), ('max_pool_3x3', 0), ('max_pool_3x3', 0), ('skip_connect', 2), ('skip_connect', 2), ('avg_pool_3x3', 0)], reduce_concat=[2, 3, 4, 5])
+#
+#n_model = 10000
+#model_genotype = []
+#model_arch = []
+#
+#for i in range(n_model):
+#	np.random.seed(i)	
+#	#NUM_VERTICES = np.random.randint(4, 10)
+#	#print(NUM_VERTICES)
+#	arch = Arch().random_arch()
+#	normal = []
+#	reduce = []
+#	sample_normal = arch[0]
+#	for nodes, op in sample_normal:
+#		op_name = OPS[op]
+#		normal.append((op_name, nodes))
+#	
+#	sample_reduce = arch[1]
+#	for nodes, op in sample_reduce:
+#		op_name = OPS[op]
+#		reduce.append((op_name, nodes))
+#		
+#	sample_darts = Genotype(normal=normal, normal_concat=[2, 3, 4, 5], reduce=reduce, reduce_concat=[2, 3, 4, 5])
+#	print(arch)
+#	print(sample_darts)
+#	model_arch.append(arch)
+#	
+#	model_genotype.append(sample_darts)
+#
+#pickle.dump(model_genotype, open("new/model_genotype_depth.pickle", "wb"))
+#pickle.dump(model_arch, open("new/model_arch_depth.pickle", "wb"))
+#
+#depth = []
+#for i in range(n_model):
+#	np.random.seed(i)	
+#	depth.append(np.random.randint(8, 21))
+#print(depth)
+#pickle.dump(model_arch, open("new/depth.pickle", "wb"))

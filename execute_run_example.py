@@ -17,7 +17,7 @@ print(len(select_index))
 
 for j in range(1, 52):
 	for i in range(len(select_index)):
-		cmd = './maestro --HW_file="data/hw/accelerator_{}.m" --Mapping_file="data/mapping/{}_out.m" --print_res=true --print_res_csv_file=true --print_log_file=false'.format(j, i)
+		cmd = './maestro --HW_file="data/hw/accelerator_{}.m" --Mapping_file="data/mapping/{}_out.m" --print_res=false --print_res_csv_file=true --print_log_file=false'.format(j, i)
 		os.system(cmd)
 	
 	latency = []

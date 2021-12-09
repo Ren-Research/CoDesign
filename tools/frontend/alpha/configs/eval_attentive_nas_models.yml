@@ -4,8 +4,8 @@
 arch: 'attentive_nas_static_model'
 
 pareto_models:
-    #supernet_checkpoint_path: "./alpha/attentive_nas_data/attentive_nas_pretrained.pth.tar"
-    supernet_checkpoint_path: "./attentive_nas_data/attentive_nas_pretrained.pth.tar"
+    supernet_checkpoint_path: "./alpha/attentive_nas_data/attentive_nas_pretrained.pth.tar"
+    #supernet_checkpoint_path: "./attentive_nas_data/attentive_nas_pretrained.pth.tar"
 
     a0:
         model: "attentive_nas_a0"

@@ -89,17 +89,21 @@ if __name__ == "__main__":
         from alpha.test_attentive_nas import get_model
         
         model_config = pickle.load(open("./alpha/models/config.pickle", "rb"))
+        select_model_index = pickle.load(open("./alpha/models/plot/select_model_index.pickle", "rb"))
+        print(len(select_model_index))
         
         if opt.model == 'custom':
             print(opt.custom)
                         
-            for i in range(1):
-                model = get_model(model_config[i])
+            for i in range(len(select_model_index)):
+                idx = select_model_index[i]
+                model = get_model(model_config[idx])
+                print(model_config[idx]["resolution"])
                 #print(mode)
                 device = torch.device('cuda:0' if torch.cuda.is_available() else 'cpu')
                 model = model.to(device)
-                print(model)
-                mae_summary = summary(model, (3,model_config[i]["resolution"],model_config[i]["resolution"]))
+                #print(model)
+                mae_summary = summary(model, (3,model_config[idx]["resolution"],model_config[idx]["resolution"]))
                 with open("../../data/model/"+str(i)+"_"+opt.outfile, "w") as fo:
                     fo.write("Network {} {{\n".format(model.__module__))
                     for key, val in mae_summary.items():

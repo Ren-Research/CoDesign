@@ -55,7 +55,7 @@ for axis in ['top','bottom','left','right']:
 
 plt.show()
 
-fig.savefig('../new/sample_model.pdf')
+fig.savefig('./sample_model.pdf')
 
 
 def euclidean_distance(k, h, pointIndex):
